@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class KnowledgePoint {
 	
 	private String knowledgeNum;
-	private String knowledgeLable;
+	private String knowledgeLabel;
 	private ArrayList<String> knowledgeEg;
 	private String sectionNum;
 	
@@ -21,11 +21,11 @@ public class KnowledgePoint {
 	public void setKnowledgeNum(String knowledgeNum) {
 		this.knowledgeNum = knowledgeNum;
 	}
-	public String getKnowledgeLable() {
-		return knowledgeLable;
+	public String getKnowledgeLabel() {
+		return knowledgeLabel;
 	}
-	public void setKnowledgeLable(String knowledgeLable) {
-		this.knowledgeLable = knowledgeLable;
+	public void setKnowledgeLabel(String knowledgeLabel) {
+		this.knowledgeLabel = knowledgeLabel;
 	}
 	public ArrayList<String> getKnowledgeEg() {
 		return knowledgeEg;

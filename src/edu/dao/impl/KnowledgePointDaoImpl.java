@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.dao.KnowledgePointDao;
@@ -35,9 +34,10 @@ public class KnowledgePointDaoImpl implements KnowledgePointDao {
 				KnowledgePoint k = new KnowledgePoint();
 				k.setKnowledgeNum(know_num);
 				k.setSectionNum(sec_num);
-				k.setKnowledgeLable(label);
+				k.setKnowledgeLabel(label);
+				list.add(k);
 			}
-			
+			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
