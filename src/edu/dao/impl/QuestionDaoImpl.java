@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import edu.Util.DBUtil;
+import edu.util.DBUtil;
 import edu.dao.QuestionDao;
 import edu.entity.Question;
 
