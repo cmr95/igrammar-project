@@ -1,0 +1,34 @@
+package edu.entity;
+
+import java.util.ArrayList;
+
+public class Detail {
+	private String detailLabel;
+	private String detailNum;
+	private String knowledgeNum;
+	private ArrayList <String> detailEg = new ArrayList <String>();
+	public String getDetailLabel() {
+		return detailLabel;
+	}
+	public void setDetailLabel(String detailLabel) {
+		this.detailLabel = detailLabel;
+	}
+	public String getDetailNum() {
+		return detailNum;
+	}
+	public void setDetailNum(String detailNum) {
+		this.detailNum = detailNum;
+	}
+	public String getKnowledgeNum() {
+		return knowledgeNum;
+	}
+	public void setKnowledgeNum(String knowledgeNum) {
+		this.knowledgeNum = knowledgeNum;
+	}
+	public ArrayList <String> getDetailEg() {
+		return detailEg;
+	}
+	public void setDetailEg(ArrayList <String> detailEg) {
+		this.detailEg = detailEg;
+	}
+}
