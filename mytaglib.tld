@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <description>A taglib for iGrammar</description>
+ <tlib-version>1.0</tlib-version>
+ <short-name>MyTaglib</short-name>
+ <uri>/TagLibrary</uri>
+ <function>
+  <description>Obtain the list of chapters</description>
+  <name>getChapterList</name>
+  <function-class>edu.business.Knowledge</function-class>
+  <function-signature>java.util.ArrayList getChapterList()</function-signature>
+ </function>
+ <function>
+  <description>Obtain the list of sections of the specific chapter</description>
+  <name>getSections</name>
+  <function-class>edu.business.Knowledge</function-class>
+  <function-signature>java.util.ArrayList getSections(java.lang.String)</function-signature>
+ </function>
+ <function>
+  <description>Obtain the list of knowledge points of the specific section</description>
+  <name>getKnowledgePoints</name>
+  <function-class>edu.business.Knowledge</function-class>
+  <function-signature>java.util.ArrayList getKnowledgePoints(java.lang.String)</function-signature>
+ </function>
+ <function>
+  <description>Obtain the list of detail of the specific knowledgepoint</description>
+  <name>getDetail</name>
+  <function-class>edu.business.Knowledge</function-class>
+  <function-signature>java.util.ArrayList getDetail(java.lang.String)</function-signature>
+ </function>
+</taglib>

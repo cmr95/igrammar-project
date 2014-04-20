@@ -1,0 +1,9 @@
+package edu.dao;
+
+import java.util.ArrayList;
+
+import edu.entity.Detail;
+
+public interface DetailDao {
+	public ArrayList<Detail> getDetail(String knowledgeNum);
+}

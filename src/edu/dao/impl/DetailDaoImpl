@@ -1,0 +1,53 @@
+package edu.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import edu.dao.DetailDao;
+import edu.entity.Detail;
+import edu.util.DBUtil;
+
+public class DetailDaoImpl implements DetailDao {
+
+	@Override
+	public ArrayList<Detail> getDetail(String knowledgeNum) {
+		String sql = " select detail_knowledge.detail_num,know_num, label,example " +
+				" from detail_knowledge left join detail_label " +
+				" on detail_knowledge.detail_num = detail_label.detail_num " +
+				" left join detail_example on detail_example.detail_num = detail_knowledge.detail_num "+
+				" where know_num=?";
+		
+		DBUtil util = new DBUtil();
+		Connection conn = util.getConn();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, knowledgeNum);
+			ResultSet rs = pstmt.executeQuery();
+			ArrayList<Detail> list = new ArrayList<Detail>();
+			while(rs.next()){
+				String detail_num = rs.getString("detail_num");
+				String knowledge_num = rs.getString("know_num");
+				String label = rs.getString("label");
+				String[] exm = rs.getString("example").split("\\^\\^");
+				Detail d = new Detail();
+				d.setDetailNum(detail_num);
+				d.setKnowledgeNum(knowledge_num);
+				d.setDetailLabel(label);
+				for(String example:exm){
+					d.getDetailEg().add(example);
+				}
+				list.add(d);
+			}
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+}

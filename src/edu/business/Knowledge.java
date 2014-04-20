@@ -3,9 +3,11 @@ package edu.business;
 import java.util.ArrayList;
 
 import edu.dao.ChapterDao;
+import edu.dao.DetailDao;
 import edu.dao.KnowledgePointDao;
 import edu.dao.SectionDao;
 import edu.dao.impl.ChapterDaoImpl;
+import edu.dao.impl.DetailDaoImpl;
 import edu.dao.impl.KnowledgePointDaoImpl;
 import edu.dao.impl.SectionDaoImpl;
 import edu.entity.Chapter;
@@ -26,5 +28,10 @@ public class Knowledge {
 	public static ArrayList<?> getKnowledgePoints(String secNum){
 		KnowledgePointDao dao = new KnowledgePointDaoImpl();
 		return dao.getKnowledgePoints(secNum);
+	}
+	
+	public static ArrayList<?> getDetail(String knowledgeNum){
+		DetailDao dao = new DetailDaoImpl();
+		return dao.getDetail(knowledgeNum);
 	}
 }
